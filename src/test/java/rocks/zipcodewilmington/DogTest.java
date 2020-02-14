@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -10,9 +12,6 @@ import java.util.Date;
  * @author leon on 4/19/18.
  */
 public class DogTest {
-    // TODO - Create tests for `Integer getId()`
-    // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
-    // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
     @Test
     public void setNameTest() {
@@ -31,11 +30,9 @@ public class DogTest {
     @Test
     public void setBirthDateTest() {
         Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
-        dog.setName(givenName);
-        Date currentDate = new Date();
-        Date actual = dog.getBirthDate();
-        Assert.assertEquals(currentDate, actual);
+        Date expected = new Date();
+        dog.setBirthDate(expected);
+        Assert.assertEquals(expected, dog.getBirthDate());
     }
 
     @Test
@@ -49,8 +46,7 @@ public class DogTest {
 
     @Test
     public void eatTest() {
-        Dog dog = new Dog(null, null, null);
-        String givenName = "Milo";
+        Dog dog = new Dog("Milo", null, null);
         int expected = dog.getNumberOfMealsEaten();
         Assert.assertEquals(expected, 0);
     }
@@ -62,5 +58,17 @@ public class DogTest {
         Integer id = dog.getId();
         Integer expected = 0;
         Assert.assertEquals(expected, id);
+    }
+
+    @Test
+    public void instanceOfAnimal() {
+        Dog dog = new Dog(null, null, 0);
+        Assert.assertEquals(dog instanceof Animal, true);
+    }
+
+    @Test
+    public void instanceOfMammal() {
+        Dog dog = new Dog(null, null, 0);
+        Assert.assertEquals(dog instanceof Mammal, true);
     }
 }

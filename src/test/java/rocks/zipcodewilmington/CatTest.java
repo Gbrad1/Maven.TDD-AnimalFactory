@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -88,7 +90,7 @@ public class CatTest {
 
     }
 
-    /*@Test
+    @Test
     public void javaInstanceOfAnimalTest() {
         String givenName = "Zula";
         Date givenBirthDate = new Date();
@@ -108,6 +110,6 @@ public class CatTest {
         boolean expected = cat instanceof Mammal;
         boolean actual = true;
         Assert.assertEquals(expected, actual);
-    }*/
+    }
 
 }
