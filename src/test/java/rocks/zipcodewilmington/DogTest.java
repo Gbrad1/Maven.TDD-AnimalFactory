@@ -63,12 +63,12 @@ public class DogTest {
     @Test
     public void instanceOfAnimal() {
         Dog dog = new Dog(null, null, 0);
-        Assert.assertEquals(dog instanceof Animal, true);
+        Assert.assertTrue(dog instanceof Animal);
     }
 
     @Test
     public void instanceOfMammal() {
         Dog dog = new Dog(null, null, 0);
-        Assert.assertEquals(dog instanceof Mammal, true);
+        Assert.assertTrue(dog instanceof Mammal);
     }
 }
