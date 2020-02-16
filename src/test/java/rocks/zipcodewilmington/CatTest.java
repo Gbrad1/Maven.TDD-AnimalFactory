@@ -75,8 +75,11 @@ public class CatTest {
         Date givenBirthDate = new Date();
         Integer givenId = 0;
         Cat cat = new Cat(givenName, givenBirthDate, givenId);
-        int expected = cat.getNumberOfMealsEaten();
-        Assert.assertEquals(expected, 0);
+        Food pasta = new Food();
+        cat.eat(pasta);
+        int actual = cat.getNumberOfMealsEaten();
+        int expected = 1;
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
